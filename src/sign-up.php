@@ -58,7 +58,7 @@ $stmt->bind_param("ssssss",
                   
 if ($stmt->execute()) {
 
-    header("Location: public/sign-up-success.html");
+    header("Location: ../public/sign-up-success.html");
     exit;
     
 } else {
