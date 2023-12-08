@@ -67,7 +67,7 @@ include '../variables.php'
 
             <!-- sign up pop-up: ask sign-up details from the user -->
             <div class="form-popup" id="signForm">
-                <form action="sign-up.php" method="post" class="form-container" >
+                <form action="../src/sign-up.php" method="post" class="form-container" >
                     <label for ="head" class="headlabel"><b>Sign Up</b></label><br>
                     
                     <div class ="sign"> <!-- FOR FIRST NAME-->
@@ -83,6 +83,11 @@ include '../variables.php'
                     <div class ="sign"> <!-- FOR USERNAME -->
                     <label for = "username"><b>Username</b></label>
                     <input type = "text" placeholder="Enter username" id= "lastname" name="username" required> <br>
+                    </div>
+                    
+                    <div class ="sign"> <!-- FOR EMAIL -->
+                    <label for = "email"><b>Email</b></label>
+                    <input type = "text" placeholder="Enter email" id= "email" name="email" required> <br>
                     </div>
 
                     <div> <!-- FOR PASSWORD -->
