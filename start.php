@@ -42,6 +42,8 @@ if ($conn->query($sqlCreateDB) === TRUE) {
         start_longitude DOUBLE NOT NULL,
         end_latitude DOUBLE NOT NULL,
         end_longitude DOUBLE NOT NULL,
+        origin_address varchar(100),
+        destination_address varchar(100),
         timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
     )";

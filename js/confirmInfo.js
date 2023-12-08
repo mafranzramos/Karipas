@@ -1,5 +1,7 @@
 var sessionId;
 var isLoggedIn;
+var greetElement = document.getElementById('greet');
+var hoverCount = 0;
 
 function checkSession() {
   var callName = document.getElementById("callName");
@@ -35,13 +37,32 @@ function loggedLink() {
   var logInLink = document.getElementById("logInLink");
 
     if (isLoggedIn) {
-      logInLink.innerHTML = '<a href="viewaccount.php"> View Account </a>';
+      logInLink.innerHTML = '<a href="viewaccount.php"> VIEW ACCOUNT </a>';
     } else {
-      logInLink.innerHTML = '<a> Log In </a>';
+      logInLink.innerHTML = '<a> LOG IN </a>';
       logInLink.addEventListener("click", openLogInForm);
     }
   } 
 
+/* trippings */
+function changeGreet() {
+  hoverCount++;
+
+  if (hoverCount == 1) {
+    greetElement.innerHTML = '<a id= "greet">San ka punta? To the moon? </a>';}
+  else if (hoverCount == 2) {
+    greetElement.innerHTML = '<a id= "greet">Roadtrip broom broom~</a>';
+  }
+  else if (hoverCount == 3) {
+    greetElement.innerHTML = '<a id= "greet">Skrrr skrr zoom zoom~</a>';
+  }
+  else {
+  greetElement.innerHTML = '<a id= "greet">Where are you going?</a>';
+  hoverCount = 0;
+}
+}
+
+greetElement.addEventListener('mouseover', changeGreet);
 
 
 checkSession();
@@ -71,8 +92,21 @@ function confirmDelete() {
   return false; 
 }
 
+/* tab effect */
+$(document).ready(function () {
+  $("#content").on("click", ".tabs a", function (e) {
+    e.preventDefault();
+    $(this)
+      .parents(".tab-container")
+      .find(".tab-content > div")
+      .each(function () {
+        $(this).hide();
+      });
 
-/* show invalid password */
-function showInvalidPopup() {
-  document.getElementById("invalid-password").style.display = "block";
-}
+    $(this)
+      .parents(".tabs")
+      .find("a")
+      .removeClass("active"),
+      $(this).toggleClass("active"), $("#" + $(this).attr("src")).show();
+  });
+});

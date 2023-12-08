@@ -3,7 +3,7 @@ session_start();
 
 // check if the user is logged in
 if (!isset($_SESSION["user_id"])) {
-    header("Location: src/log-in.php"); 
+    header("Location: ../src/log-in.php"); 
     exit;
 }
 
@@ -27,24 +27,24 @@ if ($stmt = $mysqli->prepare($sql)) {
 <html lang="en">
 <head>
     <title>View Account</title>
-    <link rel="stylesheet" href="../css/teststyle.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <!-- header: logo + links-->
     <header>
         <nav>
-            <div class = "logo"> <img src="../elements/images/logo.png"> </div>
+            <div class = "logo"> KARIPAS </div>
             <div class = "nav-links"> <ul>
-                <li> <a href="index.php"> Home </a></li>
-                <li id="logOut"> <a href="../src/log-out.php"> Log Out </a></li>
+                <li> <a href="../public/index.php"> HOME </a></li>
+                <li id="logOut"> <a href="../src/log-out.php"> LOG OUT </a></li>
             </ul></div>
         </nav>
     </header>
 
     <section>
-    <div class = "user-detail">
-        <p>View Account</p>
+    <div id = "user-detail" class="column leftA">
+        <p class="changeHead">View Account</p>
 
         <p>Username: <?php echo $user["username"]; ?><p>
         <button class="changeusername" onclick="openChangeForm('changeUsernameForm')">Change username</button>
@@ -99,14 +99,12 @@ if ($stmt = $mysqli->prepare($sql)) {
                 <button type="button" class="btn close" onclick="closeChangeForm('changeLastNameForm')">Close</button> <br>
                 </form>
             </div>
-
+   
+    <br><br> <button class = "deleteaccount" onclick="openConfirmation()"><a>Delete account</a></button>
     </div>
+
+    <div class="column rightA" id="col1Img"><img src="../elements/images/tech5.gif"></div>
     </section>
-
-    <section>
-    <div>
-    <li onclick="openConfirmation()"><a>Delete account</a></li>
-    </div>
 
     <!-- confirmation popup -->
     <div id="confirmationPopup" class="form-popup">
@@ -122,12 +120,6 @@ if ($stmt = $mysqli->prepare($sql)) {
     </form>
     </div>
     </section>
-
-    <!-- invalid password popup -->
-    <div class="form-popup" id="invalid-password">
-        YER DUN!!!!!!
-    </div>
-
 
     <script src="../js/confirmInfo.js"></script>
 </body>

@@ -1,70 +1,244 @@
-*{
+@font-face {
+    font-family: 'VastagoGrotesk';
+    src: url(fonts/VastagoGrotesk-Light.otf);
+  }
+
+@font-face {
+    font-family: 'VastagoGrotesk-Bold';
+    src: url(fonts/VastagoGrotesk-Bold.otf);
+  }
+
+@font-face {
+    font-family: 'VastagoGrotesk-Black';
+    src: url(fonts/VastagoGrotesk-Black.otf);
+  }
+
+@font-face {
+    font-family: 'VastagoGrotesk-Medium';
+    src: url(fonts/VastagoGrotesk-Medium.otf);
+  }
+
+
+body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'VastagoGrotesk';
+    background-color: #E2CE5E;
 }
 
 .header {
     width: 100%;
-    min-height: 10vh;
+    min-height: 5vh;
     position: relative;
     overflow: hidden;
 }
 
 nav {
-    width: 80%;
+    background-color: #f5ecdd;
+    width: 100%;
     position: sticky;
-    margin: 2% auto;
+    margin: 0% 0;
     z-index: 1;
     display: flex;
     align-items: center;
+    font-family: 'VastagoGrotesk';
+    border-bottom: 1px solid #000;
 }
 
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
 .logo {
-    flex-basis: 10%;
+    font-size: 150%;
+    font-family: 'VastagoGrotesk-Black';
+    text-align: center;
+    flex-basis: 15%;
 }
 
 .logo img {
-    width: 130%;
+    width: 50%;
 }
 
 .nav-links {
+    border-left: 1px solid #000;
     flex: 1;
     text-align: right;
 
 }
 
+.nav-links ul{
+    margin: 0;
+}
+
 .nav-links ul li {
+    padding: 1.56% 2%;
+    border-left: 1px solid #000;
+    text-align: center;
     color: black;
     list-style: none;
     display: inline-block;
-    margin: 0 5%;
 }
 
 .nav-links ul li a:hover{
     border-radius: 25%;
-    background-color: red;
+    background-color: #e4ca59;
     text-decoration: none;
 }
 
+.nav-links ul li#logInLink {
+    font-family: 'VastagoGrotesk-Bold';
+    background-color: #e4ca59;
+}
 /*--------home css -------------*/
 
 .home {
+    background-color: #E2CE5E;
+    padding-top: 15%;
     width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
     text-align: center;
 }
 
-input[type="text"]{
-    width: 50%;
-    height: 10%;
-    padding: 2%;
+.greet {
+    font-size: 250%;
+    font-family: 'VastagoGrotesk-Bold';
+}
+/*--------- tabbed folder-----*/
+* {
+    box-sizing:border-box; 
+  }
+  
+  .tab-container{
+    position:relative;
+    margin:20px auto;
+  }
+  
+  ul.tabs{
+    display:flex;
+    position:relative;
+    width:100%;
+    margin:0; padding:0;
+    list-style:none;
+  }
+  
+  ul.tabs a{
+    border-top:1px solid #000;
+    z-index: 1;
+    position:relative;
+    font-size: 130%;
+    font-family: 'VastagoGrotesk-Bold';
+    display:inline-block;
+    background:rgb(222,206,160);
+    color:#7f7f7f;
+    cursor:pointer;
+    margin: -1% -0.1%; 
+    padding:1% 4%;
+    -webkit-clip-path: polygon(100% 0, 90% 0, 100% 100%, 0 100%, 0.5% 0);
+    clip-path: polygon(100% 0, 90% 0, 100% 100%, 0 100%, 0.5% 0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .tab-content{
+    font-family: 'VastagoGrotesk-Medium';
+    position:relative;
+    width:100%; height:100%;
+    
+  }
+
+  .tab-content > div:not(:first-child) {
+    border-top:1px solid #000;
+    display: none;
+  }
+  
+  ul.tabs a.active{
+    z-index: 6;
+    position:relative;
+    border-bottom: 5px solid #f5ecdd;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    background: #f5ecdd;
+    color:#333;
+  }
+
+  .tab-content > div {
+    position:relative;
+    z-index: 2;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    padding: 10px;
+    text-align: left;
+    min-height:200px;
+    background: #f5ecdd;
+    
+  }
+/*--------- about css--------*/
+.row {
+    display: flex;
+  }
+  
+  .column {
+    float: left;
+  }
+  
+  .left {
+    width: 60%;
+  }
+  
+  .right {
+    border-left: 1px solid #000;
+    width: 30%;
+  }
+
+
+#col1Text {
+    font-size: 120%;
+    padding: 2% 2%;
 }
 
-/*--------- about css--------*/
+#col3Text {
+    padding: -7% 0%;
+}
+
+.right img {
+    width:130%;
+    align-items: left;
+}
+
+.big {
+    font-family: 'VastagoGrotesk-Black';
+    font-size: 200%;
+    padding-top: 1%;
+}
+
+.memName {
+    font-family: 'VastagoGrotesk-Bold';
+    font-size: 120%;
+    margin-left: 6%;
+    margin-bottom: -2%;
+}
+
+.deets {
+    font-family: 'VastagoGrotesk-Medium';
+    margin-left: 10%;
+    margin-top: 0%;
+    margin-bottom: -2%;
+}
+
+.role {
+    font-size: 90%;
+    margin-left: 40%;
+    margin-top: -2.6%;
+    background-color: #355DC3;
+}
 
 .about {
-    padding: 2% auto;
+    padding: 2% 0;
     width: 100%;
     min-height: 50vh;
     text-align: center;
@@ -74,6 +248,7 @@ h1 {
     text-align: left;
 }
 
+
 /*-------- log in pop up -----*/
 
 .open-button {
@@ -81,17 +256,123 @@ h1 {
     cursor: pointer;
   }
   
+
+.but.cancel {
+    align-items: center;
+    position: absolute;
+    top: 5%; right: -25%; transition: all 200ms;
+    background: none;
+    border: none;
+    font-size: 150%;
+    color: white;
+    font-family: 'VastagoGrotesk-Bold';
+  }
+
+
 .form-popup { 
-    background-color: red;
+    z-index: 7;
+    background-color: #355DC3;
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+  }
   
+.form-popup label {
+    color: white;
+    padding: 2%;
+}
+
 .form-container {
-    max-width: 100%;
-    padding: 5%;
-    z-index: 2;
+    background-color: #355DC3;
+    width: 130%;
+    padding: 10%;
+    border: 1px solid black;
+}
+
+.headlabel {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    margin-bottom: 2%;
+    font-family: 'VastagoGrotesk-Bold';
+    font-size: 130%;
+}
+
+input {
+    padding: 3%;
+    margin: 3%;
+    font-family: 'VastagoGrotesk';
+}
+
+.btn {
+    font-family: 'VastagoGrotesk-Bold';
+    width: 73%;
+}
+
+.sign {
+    display: flex;
+}
+
+.nameInput {
+    flex: 1; 
+    margin-right: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #355DC3;
+}
+
+#lastname {
+    margin-right: 0; 
+}
+
+.othDeetz {
+    width: 97%;
+}
+
+#sub{
+    font-family: 'VastagoGrotesk-Bold';
+}
+
+#geocoder {
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    width: 50%;
+}
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+    z-index:1;
+    position: relative;
+}
+/*----- viewaccount.php---------*/
+
+#user-detail {
+    text-align: center;
+    align-items: center;
+    margin-top:5%;
+}
+
+.changeHead {
+   font-family: 'VastagoGrotesk-Black';
+   font-size: 240%;
+}
+
+.changeusername, .changefirstname, .changelastname, .deleteaccount {
+    font-family: 'VastagoGrotesk-Bold';
+}
+
+.leftA {
+    margin-left: 10%;
+    width: 30%;
+  }
+  
+.rightA {
+    width: 50%;
+  }
+
+.rightA img {
+    margin-left:10%;
+    width: 80%;
 }
