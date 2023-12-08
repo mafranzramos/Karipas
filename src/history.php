@@ -52,8 +52,7 @@ if (isset($_SESSION['user_id'])) {
 
 <script>
     function goBack() {
-        // Replace 'your_regular_page.php' with the actual page URL
-        window.location.href = 'map.php';
+        window.location.href = '../public/map.php';
     }
 </script>
 
