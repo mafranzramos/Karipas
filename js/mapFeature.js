@@ -35,33 +35,33 @@ document.addEventListener("DOMContentLoaded", function () {
   var settingEnd = false;
 
   const polylineInfo = [
-    {url: "http://localhost/Karipas/Karipas%20Cult/RoutesPoly/alangilan.json",color: "#ff0000", width: 9, name: "Alangilan", pin:"http://localhost/Karipas/Karipas%20Cult/images/alangilanpin.png"},
-    {url: "http://localhost/Karipas/Karipas%20Cult/RoutesPoly/balagtas.json",color: "#00ff00",width: 4, name: "Balagtas", pin:"http://localhost/Karipas/Karipas%20Cult/images/balagtas.pin.png"},
-    {url: "http://localhost/Karipas/Karipas%20Cult/RoutesPoly/bauanbat.json",color: "#113c82",width: 5, name: "Bauan", pin: "http://localhost/Karipas/Karipas%20Cult/images/bauanpin.png"},
-    {url: "http://localhost/Karipas/Karipas%20Cult/RoutesPoly/libjo.json",color: "#5a2476",width: 5, name: "Libjo", pin:"http://localhost/Karipas/Karipas%20Cult/images/libjopin.png"},
+    {url: "http://localhost/Karipas/src/RoutesPoly/alangilan.json",color: "#ff0000", width: 9, name: "Alangilan", pin:"http://localhost/Karipas/elements/images/alangilanpin.png"},
+    {url: "http://localhost/Karipas/src/RoutesPoly/balagtas.json",color: "#00ff00",width: 4, name: "Balagtas", pin:"http://localhost/Karipas/elements/images/balagtas.pin.png"},
+    {url: "http://localhost/Karipas/src/RoutesPoly/bauanbat.json",color: "#113c82",width: 5, name: "Bauan", pin: "http://localhost/Karipas/elements/images/bauanpin.png"},
+    {url: "http://localhost/Karipas/src/RoutesPoly/libjo.json",color: "#5a2476",width: 5, name: "Libjo", pin:"http://localhost/Karipas/elements/images/libjopin.png"},
   ];
 
-  function displayAllRoutes(polylineData, color) { // for showing routes on map. pede tanggalin
-    map.addSource(polylineData.id, {
-      type: "geojson",
-      data: polylineData.data,
-    });
+  // function displayAllRoutes(polylineData, color) { // for showing routes on map. pede tanggalin
+  //   map.addSource(polylineData.id, {
+  //     type: "geojson",
+  //     data: polylineData.data,
+  //   });
 
-    map.addLayer({
-      id: polylineData.id,
-      type: "line",
-      source: polylineData.id,
-      layout: {
-        "line-join": "round",
-        "line-cap": "round",
-      },
-      paint: {
-        "line-color": color,
-        "line-width": 8,  
-        "line-opacity": 0.18,
-      },
-    });
-  }
+  //   map.addLayer({
+  //     id: polylineData.id,
+  //     type: "line",
+  //     source: polylineData.id,
+  //     layout: {
+  //       "line-join": "round",
+  //       "line-cap": "round",
+  //     },
+  //     paint: {
+  //       "line-color": color,
+  //       "line-width": 8,  
+  //       "line-opacity": 0.18,
+  //     },
+  //   });
+  // }
 
   map.on("load", function () { // for showing routes. pede tanggalin
     polylineInfo.forEach((info) => {
@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleMarkerSetting(e, type) {
     const marker = type === "start" ? startMarker : endMarker;
     const markerImage = type === "start"
-  ? "http://localhost/Karipas/Karipas%20Cult/images/mapbox-marker-icon-20px-green.png"
-  : "http://localhost/Karipas/Karipas%20Cult/images/mapbox-marker-icon-20px-red.png";
+  ? "http://localhost/Karipas/elements/images/mapbox-marker-icon-20px-green.png"
+  : "http://localhost/Karipas/elements/images/mapbox-marker-icon-20px-red.png";
 
 
     if (marker) {
@@ -847,7 +847,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function getStopPoints() {
     try {
-      const response = await fetch("http://localhost/Karipas/Karipas%20Cult/RoutesPoly/StopPoints.json");
+      const response = await fetch("http://localhost/Karipas/src/RoutesPoly/StopPoints.json");
       const data = await response.json();
       return data.features.map(feature => feature.geometry.coordinates);
     } catch (error) {
@@ -912,19 +912,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return [parseFloat(lng), parseFloat(lat)]; // Combine latitude and longitude
     }
 });
-
-class FindClosestPoints{
-
-}
-class JeepLines{
-
-}
-class OverlappingPoints {
-  
-}
-class WalkingLines{
-  
-}
 
 class FareCalculator {
   constructor(baseFare, initialDistance, perKm) {
