@@ -28,7 +28,7 @@ Goal 8 - Decent Work and Economic Growth
 1. Clone or download the repository into the `htdocs` folder of your XAMPP installation.
 
     ```bash
-    git clone https://github.com/<your-username>/Karipas.git
+    git clone https://github.com/mafranzramos/Karipas.git
     ```
 
 2. Start XAMPP and ensure that Apache and MySQL are running.
